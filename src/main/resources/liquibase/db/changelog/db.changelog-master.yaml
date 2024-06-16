@@ -1,0 +1,51 @@
+#databaseChangeLog:
+#  - changeSet:
+#      id: 1
+#      author: mehman
+#      changes:
+#        - createTable:
+#            tableName: title
+#            columns:
+#              - column:
+#                  name: id
+#                  type: int
+#                  constraints:
+#                    primaryKey: true
+#                    nullable: false
+#              - column:
+#                  name: name
+#                  type: varchar(255)
+#                  constraints:
+#                    nullable: false
+#              - column:
+#                  name: description
+#                  type: text
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: mehman
+      changes:
+        - createTable:
+            tableName: example
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: currency_code
+                  type: VARCHAR(3)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rate
+                  type: DECIMAL(19, 4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP

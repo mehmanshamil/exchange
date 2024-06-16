@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: abbtech-exchange-ms
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/exchange
+    username: mehman
+    password: pass
+    hikari:
+      schema: exchange
+    spring:
+      liquibase:
+        change-log: classpath:db/changelog/db.changelog-master.yaml
+
+server:
+  servlet:
+    context-path: /api/v1
+  port: 8081
+
+custom:
+  property:
+    name: Name
+    value: 10
