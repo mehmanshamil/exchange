@@ -24,7 +24,7 @@ public class ExchangeRateUpdater {
     private final ExchangeRateRepository repository;
     private static final String API_URL = "https://api.exchangeratesapi.io/latest?base=AZN";
 
-    @Scheduled(fixedRate = 3600000) // 1 saat
+    @Scheduled(fixedRate = 3600000)
     public void updateRates() {
         String response = restTemplate.getForObject(API_URL, String.class);
         ObjectMapper objectMapper = new ObjectMapper();
